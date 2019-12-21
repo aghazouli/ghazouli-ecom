@@ -1,0 +1,29 @@
+package org.mid.ghazouliecom.entities;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import javax.persistence.*;
+import java.io.Serializable;
+
+/**
+ * Product class
+ */
+@Entity
+@Data @AllArgsConstructor @NoArgsConstructor @ToString
+public class Product implements Serializable {
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String description;
+    private double price;
+    private boolean selected;
+    private boolean discount;
+    private boolean available;
+    private String photoName;
+    @ManyToOne
+    private Category category;
+}
