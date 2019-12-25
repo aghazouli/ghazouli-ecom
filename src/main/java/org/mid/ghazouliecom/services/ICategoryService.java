@@ -1,4 +1,4 @@
 package org.mid.ghazouliecom.services;
 
-public interface CategoryService {
+public interface ICategoryService {
 }

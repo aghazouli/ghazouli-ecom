@@ -1,4 +1,4 @@
 package org.mid.ghazouliecom.services;
 
-public interface ProductService {
+public interface IProductService {
 }

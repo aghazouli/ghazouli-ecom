@@ -12,7 +12,8 @@ import java.util.Collection;
  * Category of product entity
  */
 @Entity
-@Data @AllArgsConstructor
+@Data
+@AllArgsConstructor
 @NoArgsConstructor
 public class Category implements Serializable {
 
@@ -20,6 +21,7 @@ public class Category implements Serializable {
     private Long id;
     private String name;
     private String description;
+    private String photo;
     @OneToMany(mappedBy = "category")
     private Collection<Product> products;
 }
