@@ -43,6 +43,7 @@ public class GhazouliEcomApplication implements CommandLineRunner {
             for (int i=0;i<10;i++) {
 
                 Product product = new Product();
+                product.setPrice(random.nextDouble());
                 product.setAvailable(random.nextBoolean());
                 product.setDescription("imprimante");
                 product.setName(RandomString.make(20));
