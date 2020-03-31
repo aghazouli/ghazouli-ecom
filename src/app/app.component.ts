@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CatalogueService} from './catalogue.service';
+import {Route, Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,10 @@ import {CatalogueService} from './catalogue.service';
 export class AppComponent implements OnInit {
   title = 'ghazouli-ecom-front';
   private categories;
+  private currentCategories;
 
-  constructor (private cataloguService:CatalogueService){
+  constructor (private cataloguService:CatalogueService,
+               private router:Router){
 
   }
 
@@ -27,5 +30,15 @@ export class AppComponent implements OnInit {
         console.log('erreur');
         }
     );
+  }
+
+   getProductsByCat(c){
+     this.currentCategories = c;
+     this.router.navigateByUrl('/products/2/'+c.id);
+  }
+
+  onSelectedProduct() {
+    this.currentCategories = undefined;
+    this.router.navigateByUrl('/products/1/0');
   }
 }

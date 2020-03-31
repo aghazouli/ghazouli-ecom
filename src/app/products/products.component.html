@@ -6,8 +6,29 @@
             <div class="panel-body">
               <table>
                 <tr>
-                  <td>
+                  <td rowspan="3">
                     <img height="100" src="{{this.catalogueService.localhost + '/photoProduct/' + p.id }}">
+                  <p>
+                    <button (click)="onEditPhoto(p)">
+                      <span class="glyphicon glyphicon-edit"></span>
+                    </button></p>
+                    <p *ngIf="editPhoto && currentProduct==p">
+                    <input type="file" (change)="onSelectedFile($event)"/>
+                      <button class="btn btn-success" (click)="uploadPhoto()">Upload</button>
+                      {{progress}}
+                  </p>
+                  </td>
+
+                </tr>
+                <tr>
+                  <td>
+                    {{p.price | number:'0.00'}}
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    {{p.description}}
                   </td>
                 </tr>
               </table>
